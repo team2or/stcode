@@ -22,6 +22,7 @@ def solution(answers):
     f = [1,2,3,4,5]
     s = [2,1,2,3,2,4,2,5]
     t = [3,3,1,1,2,2,4,4,5,5]
+    #점수 리스트로 만들기
     score = [0,0,0]
     answer=[]
     for i in range(len(answers)):
