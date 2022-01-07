@@ -1,3 +1,6 @@
+# https://programmers.co.kr/learn/courses/30/lessons/12934
+# Programmers 12934.
+
 def solution(n):
     if n > 5*(10**13) or n <= 0:
         n = int(input("50000000000000이하의 양의 정수를 입력하세요 : "))
