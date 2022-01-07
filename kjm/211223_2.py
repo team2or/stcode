@@ -1,3 +1,6 @@
+# https://programmers.co.kr/learn/courses/30/lessons/12930
+# Programmmers 12930.
+
 def solution(s):
     text_l = s.split(" ")
     result = ""
