@@ -1,4 +1,8 @@
+# https://programmers.co.kr/learn/courses/30/lessons/12901
+# Programmers 12910.
+
 from datetime import datetime
+
 def solution(a, b):
     try:
         date = f'2016-{a}-{b}'
