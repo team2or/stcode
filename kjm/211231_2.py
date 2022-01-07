@@ -1,3 +1,6 @@
+# https://www.acmicpc.net/problem/11720
+# BeakJoon 11720.
+
 #1
 lenth = int(input())
 num = input()
