@@ -1,3 +1,6 @@
+# https://programmers.co.kr/learn/courses/30/lessons/12932
+# Programmers 19232.
+
 def solution(n):
     answer = []
     n = str(n)
