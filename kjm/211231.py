@@ -1,3 +1,6 @@
+# https://www.acmicpc.net/problem/1110
+# BaekJoon 1110.
+
 n = num = int(input())
 cnt = 0
 while True:
