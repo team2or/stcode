@@ -22,11 +22,12 @@ solution(["muzi", "frodo", "apeach", "neo"],["muzi frodo","apeach frodo","frodo 
 def solution(id_list, report, k):
     list_={}
     re_users=[]
+    report=set(report)
     for i in report:
         user, re_user=i.split()
         if re_user not in list_:
             list_[re_user]=1
-        elif re_user not in list :
+        else:
             list_[re_user]+=1
     for i,j in list_.items():
         if k<=j:
@@ -37,7 +38,6 @@ def solution(id_list, report, k):
         if re_user in re_users:
             answer[id_list.index(user)]+=1
     return answer
-
 
     print(list_)
 
