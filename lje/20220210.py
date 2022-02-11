@@ -15,8 +15,6 @@ SELECT COUNT(DISTINCT NAME) as count FROM ANIMAL_INS
 # https://programmers.co.kr/learn/courses/30/lessons/42626
 
 # 최종답
-
-
 def solution(scoville, K):
     answer = 0
     heapq.heapify(scoville)
@@ -30,8 +28,6 @@ def solution(scoville, K):
         else:
             return -1
     return answer
-
-
 solution([1, 2, 3, 9, 10, 12], 7)
 
 
@@ -49,6 +45,4 @@ def solution(scoville, K):
                 scoville.sort()
                 answer += 1
     return answer
-
-
 solution([1, 2, 3, 9, 10, 12], 7)
