@@ -6,7 +6,13 @@ answer=0
 if citys[0]==min(citys):
     answer+=citys[0]*sum(roads)
 
-elif citys[0]!= min(citys):
-    answer+=citys[0]*roads[0]
+else:
+    answer=roads[0]*citys[0]
+    min_city=citys[0]
+
+    for i in range(1,n-1):
+        if min_city> citys[i]:
+            min_city=citys[i]
+        answer+=min_city*roads[i]
 
 print(answer)
