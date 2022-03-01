@@ -1,2 +1,15 @@
 #위장
-# https://www.hackerrank.com/challenges/weather-observation-station-6/problem?isFullScreen=true
+def solution(clothes):
+    answer = 1
+    clo={}
+    for cloth, types in clothes:
+        value = clo.get(types)
+        if value==None:
+            clo[types] = [cloth]
+        else:
+            clo[types].append(cloth)
+    for i in clo.keys():
+        answer*=len(clo[i])+1
+    return answer-1
+
+solution([["yellowhat", "headgear"], ["bluesunglasses", "eyewear"], ["green_turban", "headgear"]])
