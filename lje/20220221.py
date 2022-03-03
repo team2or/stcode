@@ -15,6 +15,7 @@ WHERE A.DATETIME < B.DATETIME ORDER BY B.DATETIME;
 
 #카드정렬하기
 #https://www.acmicpc.net/problem/1715
+#heapq이용: https://www.daleseo.com/python-heapq/
 import heapq
 import sys
 
