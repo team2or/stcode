@@ -1,28 +1,22 @@
-from sys import stdin
-n, m, v = map(int, stdin.readline().split())
-matrix = [[0] * (n + 1) for _ in range(n + 1)]
-for _ in range(m):
-    line = list(map(int, stdin.readline().split()))
-    matrix[line[0]][line[1]] = 1
-    matrix[line[1]][line[0]] = 1
+#다리를 지나는 트럭
 
-def bfs(start):
-    visited = [start]
-    queue = [start]
-    while queue:
-        n = queue.pop(0)
-        for c in range(len(matrix[start])):
-            if matrix[n][c] == 1 and (c not in visited):
-                visited.append(c)
-                queue.append(c)
-    return visited
+def solution(bridge_length, weight, truck_weights):
+    second = 0
+    completed = []
+    in_bridge = [0] * bridge_length
+    size = len(truck_weights)
+    while len(completed) < size:
+        second += 1
+        top = in_bridge.pop(0)
+        if top != 0:
+            completed.append(top)
+        if len(truck_weights) > 0: 
+            if sum(in_bridge) + truck_weights[0] <= weight:
+                in_bridge.append(truck_weights.pop(0))
+            else:
+                in_bridge.append(0)
+    return second
 
-def dfs(start, visited):
-    visited += [start]
-    for c in range(len(matrix[start])):
-        if matrix[start][c] == 1 and (c not in visited):
-            dfs(c, visited)
-    return visited
-
-print(*dfs(v,[]))
-print(*bfs(v))
+if __name__=="__main__":
+    ans=solution(2,10,[7,4,5,6])
+    print(ans)
