@@ -2,12 +2,19 @@
 
 import sys
 def solution():
-    hats = []
+    hats = [int(sys.stdin.readline()) for _ in range(9)]
+    total= sum(hats)
+    TF=False
+    
     for i in range(9):
-        hats.append(int(sys.stdin.readline()))
-    hats.sort(reverse=True)
-     if sum(hats[:8]) 100:
-        return hats[:8]
+        for j in range(i+1,9):
+            if total - hats[i]-hats[j]==100:
+                hats.pop(j)
+                hats.pop(i)
+                hats.sort()
+                return hats
 
-
-
+if __name__=="__main__":
+    hats=solution()
+    for hat in hats:
+        print(hat)
