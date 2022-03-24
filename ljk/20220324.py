@@ -1,38 +1,35 @@
-#토마토
+#케빈 베이컨의 6단계 법칙
 from sys import stdin
 from collections import deque
-class Tomato:
+class Bacon:
     def __init__(self):
-        m,n = map(int, stdin.readline().split())
-        tomatos=[list(map(int, stdin.readline().split())) for _ in range(n)]
-        queue= deque([])
-        dx, dy= [-1,1,0,0],[0,0,-1,1]
-        answer=0
+        n,m = map(int, stdin.readline().split())
+        real= {i:[] for i in range(1,n+1)}
+        for _ in range(m):
+            x,y = map(int, stdin.readline().split())
+            real[x].append(y)
+            real[y].append(x)
+        dic={}
+        for num in range(1,n+1):
+            dic[num]=self.bfs(num,n,real)
+        result=sorted(dic.items(), key=lambda x: x[1])
+        print(result[0][0])
 
-        for i in range(n):
-            for j in range(m):
-                if tomatos[i][j]==1:
-                    queue.append([i,j])
-        self.bfs(queue,dx,dy, tomatos,n,m)
-        for i in tomatos:
-            for j in i:
-                if j==0:
-                    print(-1)
-                    exit(0)
-            answer=max(answer, max(i))
-        print(answer-1)
-
-    def bfs(self, queue,dx, dy, tomatos,n,m):
+    def bfs(self, num, n, real):
+        bacon=[0]*(n+1)
+        visited=[num]
+        queue= deque()
+        queue.append(num)
         while queue:
-            x,y = queue.popleft()
-            for i in range(4):
-                nx, ny = dx[i]+x, dy[i]+y
-                if 0<= nx <n and 0<= ny< m and tomatos[nx][ny]==0:
-                    tomatos[nx][ny]=tomatos[x][y]+1
-                    queue.append([nx,ny])
-
+            k= queue.popleft()
+            for i in real[k]:
+                if i not in visited:
+                    bacon[i]=bacon[k]+1
+                    queue.append(i)
+                    visited.append(i)
+        return sum(bacon)
 
 
 
 if __name__=="__main__":
-    Tomato()
+    Bacon()
