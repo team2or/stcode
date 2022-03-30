@@ -1,33 +1,31 @@
-#수찾기
+#듣보잡
 from sys import stdin,stdout
 from collections import deque
 class Cycle:
     def __init__(self):
-        n= int(stdin.readline())
-        # ns=set(map(int, stdin.readline().split()))
-        ns=sorted(list(map(int, stdin.readline().split())))
-        m= int(stdin.readline())
-        ms=list(map(int, stdin.readline().split()))
-        # for l in ms:
-        #     stdout.write('1\n') if l in ns else stdout.write('0\n')
+        n,m= map(int,stdin.readline().split())
+        self.y_unknown=[]
+        self.s_unknown=[]
+        for i in range(n):
+            self.y_unknown.append(stdin.readline().rstrip())
+        for _ in range(m):
+            self.s_unknown.append(stdin.readline().rstrip())
+        self.sol()
+    def sol(self):
+        answer=list(set(self.y_unknown)&set(self.s_unknown))
+        answer.sort()
+        return(answer)
 
-        for i in range(len(ms)):
-            print(self.binary(ms[i], ns))
-    def binary(self, element, list, start=0, end=None):
 
-        if end==None:
-            end=len(list)-1
-        if start > end:
-            return 0
-        mid = (start+end)//2
 
-        if element== list[mid]:
-            return 1
-        elif element < list[mid]:
-            end=mid-1
-        elif element> list[mid]:
-            start= mid+1
-        return self.binary(element, list, start, end)
+
+
 if __name__=="__main__":
-    Cycle() 
+    ans=Cycle().sol()
+    print(len(ans))
+    print(ans)
+    for i in ans:
+        if i:
+            print(i)
+
   
