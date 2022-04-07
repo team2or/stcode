@@ -14,7 +14,7 @@ for _ in range(k):
 result=[]
 for i in range(m):
     for j in range(n):
-        if graph[i][j] is 0:
+        if graph[i][j] == 0:
             cnt=1
             queue = deque([])
             queue.append([i,j])
