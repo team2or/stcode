@@ -2,6 +2,9 @@
 #복습
 #Weather Observation Station 20
 #https://www.hackerrank.com/challenges/weather-observation-station-20/problem?isFullScreen=true
+import re
+
+
 SELECT round(avg(tab1.LAT_N), 4) FROM (SELECT @row:=@row+1 AS 'row', S.LAT_N FROM STATION S, (SELECT @row:=0) R ORDER BY S.LAT_N) AS tab1, (SELECT count(*) AS "count" FROM STATION) AS tab2 WHERE tab1.row >= tab2.count/2 and tab1.row <= ((tab2.count/2)+1);
 
 #새문제
@@ -38,4 +41,25 @@ JOIN ( -- 각 날짜별 가장 많이 submission한 hacker
 JOIN hackers as h on s_best.best_hacker = h.hacker_id
 GROUP BY s.submission_date, s_count.hacker_count, s_best.best_hacker, h.name
 ORDER BY s.submission_date;
+
+#프로그래머스
+#DFS/BFS
+#복습
+#타겟넘버
+#https://programmers.co.kr/learn/courses/30/lessons/43165
+def solution(numbers, target):
+    answer = 0
+    q = [[numbers[0],0],[-1*numbers[0],0]]
+    n = len(numbers)
+    while q:
+        temp, idx = q.pop()
+        idx += 1
+        if idx < n:
+            q.append([numbers[idx]+temp, idx])
+            q.append([numbers[idx]+temp, idx])
+        else:
+            if temp == target:
+                answer += 1
+    return answer
+    
 
