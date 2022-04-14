@@ -35,6 +35,9 @@ while True:
         break
     else:
         nums.append(new)
+
+#반복되는 부분을 제외해야 하므로 반복이 시작되는
+#숫자의 index값을 구함
 print(nums.index(new))
 
 

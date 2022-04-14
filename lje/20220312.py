@@ -1,3 +1,4 @@
+#오늘의집
 def solution(products, purchased):
     character = []
     recommend = []

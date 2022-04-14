@@ -20,7 +20,7 @@ SELECT REPEAT('*', @NUMBER := @NUMBER -1) FROM information_schema.tables LIMIT 2
 #프로그래머스
 #깊이/너비 우선탐색(DFS/BFS)
 #타겟넘버
-
+#https://programmers.co.kr/learn/courses/30/lessons/43165
 def solution(numbers, target):
     answer = 0
     queue = [[numbers[0],0], [-1*numbers[0],0]]

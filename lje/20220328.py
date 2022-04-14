@@ -10,7 +10,7 @@ SELECT round(sqrt(pow(max(LAT_N) - min(LAT_N),2) + pow(max(LONG_W)-min(LONG_W),2
 #문자열 합치기:https://extbrain.tistory.com/52
 #모든 출력 concat으로 합쳐 하나로 출력
 #이름과 직업의 첫글자 출력. 이름순으로 정렬
-SELECT concat(Name, '(',left(Occupation, 1),')') FROM OCCUPATIONS ORDER BY Name,;
+SELECT concat(Name, '(',left(Occupation, 1),')') FROM OCCUPATIONS ORDER BY Name;
 #직업수 카운팅하여 출력. 직업은 소문자로 출력. 카운팅 수로 오름차순, 직업명 알파벳순으로 정렬
 SELECT concat('There are a total of ', count(*),' ', lower(Occupation),'s.')
 FROM OCCUPATIONS GROUP BY Occupation ORDER BY count(*), Occupation;

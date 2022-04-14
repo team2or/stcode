@@ -52,6 +52,9 @@ def dfs(line, v):
     return ' '.join(str(x) for x in visit)
 
 #프린트문으로 출력해야 함!!
-#안그러면 틀렸다고 함...ㅎ
+#안그러면 틀렸다고 함
 print(dfs(line,v))
 print(bfs(line,v))
+
+print(90//50)
+print(90%50)
