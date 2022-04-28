@@ -1,4 +1,4 @@
-#20220425
+#20220428
 from collections import deque
 def solution(begin, target, words):
     queue = deque([(begin, words, 0)])
