@@ -2,9 +2,6 @@
 #복습
 #Weather Observation Station 20
 #https://www.hackerrank.com/challenges/weather-observation-station-20/problem?isFullScreen=true
-import re
-
-
 SELECT round(avg(tab1.LAT_N), 4) FROM (SELECT @row:=@row+1 AS 'row', S.LAT_N FROM STATION S, (SELECT @row:=0) R ORDER BY S.LAT_N) AS tab1, (SELECT count(*) AS "count" FROM STATION) AS tab2 WHERE tab1.row >= tab2.count/2 and tab1.row <= ((tab2.count/2)+1);
 
 #새문제
