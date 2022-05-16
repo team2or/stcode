@@ -70,3 +70,15 @@ public class Main {
         }
     }
 }
+
+class InstaUser:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+
+    def 자기소개하기(self):
+        print(f"hi I'm {self.name}")
+    
+    def 팔로우하기(self):
+        ...
+
