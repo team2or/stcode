@@ -1,4 +1,4 @@
-#20220517
+#20220519
 def solution(skill, skill_trees):
     skill = list(skill)
     cnt = 0
