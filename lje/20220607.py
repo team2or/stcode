@@ -27,4 +27,6 @@ def solution(n):
     d[2]=2
     for i in range(3,n+1):
         d[i]=d[i-1]+d[i-2]
+    print(d)
     return d[n]%1234567
+solution(10)

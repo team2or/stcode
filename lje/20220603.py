@@ -20,3 +20,6 @@ ORDER BY count(s.challenge_id) DESC, s.hacker_id
 #프로그래머스
 #줄 서는 방법
 #https://programmers.co.kr/learn/courses/30/lessons/12936
+#조합으로 푸는 경우 효율성 에러 뜸
+n = 3
+n_list = [i for i in range(1,n+1)]

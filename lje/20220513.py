@@ -2,9 +2,6 @@
 #복습
 #Average Population
 #https://www.hackerrank.com/challenges/average-population/problem?isFullScreen=true
-from cgitb import text
-
-
 SELECT floor(avg(POPULATION)) FROM CITY;
 
 #프로그래머스
