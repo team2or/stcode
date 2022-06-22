@@ -1,16 +1,14 @@
-import sys
-
-k = int(sys.stdin.readline())
-num_stack = []
-
-for i in range(k):
-    num = int(sys.stdin.readline())
-    if num == 0:
-        del num_stack[-1]
-    else:
-        num_stack.append(num)
-
-if num_stack:
-    print(sum(num_stack))
-else:
-    print(0)
+def solution(lottos, win_nums):
+    answer = []
+    cnt = 0
+    luck_cnt = 0
+    for lotto in lottos:
+        if lotto == 0:
+            cnt += 1
+        elif lotto in win_nums:
+            luck_cnt += 1
+    award = dict()
+    for i in range(6):
+        award[i+1] = 6-i
+    award[0] = 6
+    return [award[cnt+luck_cnt], award[luck_cnt] ]
