@@ -1,7 +1,12 @@
-def solution(arr1, arr2):
-    answer = [[0 for _ in range(len(arr2[0]))] for _ in range(len(arr1))]
-    for i in range(len(arr1)):
-        for j in range(len(arr2[0])):
-            for k in range(len(arr1[0])):
-                answer[i][j] += (arr1[i][k] * arr2[k][j])
+import math
+def solution(n):
+    answer = n-1
+    for j in range(2, n+1):
+        for i in range(2, int(math.sqrt(j)+1)):
+            if j%i ==0:
+                answer-=1
+                break
+            
+            
+            
     return answer
