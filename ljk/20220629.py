@@ -1,14 +1,9 @@
-def solution(lottos, win_nums):
+def solution(numbers):
     answer = []
-    cnt = 0
-    luck_cnt = 0
-    for lotto in lottos:
-        if lotto == 0:
-            cnt += 1
-        elif lotto in win_nums:
-            luck_cnt += 1
-    award = dict()
-    for i in range(6):
-        award[i+1] = 6-i
-    award[0] = 6
-    return [award[cnt+luck_cnt], award[luck_cnt] ]
+    for idx in range(len(numbers)):
+        for i in numbers[idx + 1:]:
+            num = numbers[idx] + i
+            if num not in answer:
+                answer.append(num)
+
+    return sorted(answer)
