@@ -1,9 +1,7 @@
-def solution(numbers):
-    answer = []
-    for idx in range(len(numbers)):
-        for i in numbers[idx + 1:]:
-            num = numbers[idx] + i
-            if num not in answer:
-                answer.append(num)
-
-    return sorted(answer)
+def solution(n):
+    three=''
+    while n>0:
+        n,y=divmod(n,4)
+        three+=str(y)
+        print(n,y)
+    return int(three,4)
